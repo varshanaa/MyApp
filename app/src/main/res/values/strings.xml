@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_username">Username</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">login</string>
+    <string name="register" />
+    <string name="create_account">create account</string>
+    <string name="back">Back</string>
+    <string name="create_new_account">create_new_account</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="initialise" />
+    <string name="create_acc">CREATE NEW ACCOUNT</string>
+    <string name="registerbtn">register</string>
+    <string name="logout">Logout</string>
+    <string name="settingsmenu">Settings</string>
+</resources>
