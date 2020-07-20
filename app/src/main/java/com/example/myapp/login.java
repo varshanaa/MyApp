@@ -1,11 +1,6 @@
 package com.example.myapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,14 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-
-import org.w3c.dom.Text;
-
-import java.util.Objects;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class login extends AppCompatActivity {
 
@@ -30,8 +18,7 @@ public class login extends AppCompatActivity {
     Button mLoginBtn, mCreateAcc;
     TextView mSignIn;
     ProgressBar progressBar;
-    FirebaseAuth fAuth;
-
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +30,8 @@ public class login extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.loginbtn);
         mCreateAcc = findViewById(R.id.createaccount);
         mSignIn = findViewById(R.id.createText);
-        fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar2);
+        db = new DatabaseHelper(this);
 
         mCreateAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,18 +63,22 @@ public class login extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        } else {
-                            Toast.makeText(login.this, "Error! "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
+                Boolean chkemailpw = db.chkpassword(email, password);
+                if (chkemailpw){
+                    Toast.makeText(getApplicationContext(), "Successfully Logged In", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                }
+                else {
+                    Boolean loginemail = db.chkloginemail(email);
+                    if (loginemail){
+                        Toast.makeText(getApplicationContext(), "Email not registered", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                    } else{
+                        Toast.makeText(getApplicationContext(), "Wrong password", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
                     }
-                });
+                }
             }
         });
 

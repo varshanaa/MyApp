@@ -57,6 +57,7 @@ class Timer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.timer_activity)
+        setSupportActionBar(toolbar)
 
         fab_play.setOnClickListener { v ->
             startTimer()
