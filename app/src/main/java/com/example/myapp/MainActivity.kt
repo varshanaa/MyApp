@@ -1,22 +1,33 @@
 package com.example.myapp
 
-import android.content.Context
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.TaskLibraryActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_register.*
-import android.content.SharedPreferences as SharedPreferences1
 
 
 class MainActivity : AppCompatActivity() {
 
+    var db: DatabaseHelper? = null
+    var welcomeText: TextView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        welcomeText = findViewById<TextView>(R.id.helloUser)
+
+        db = DatabaseHelper(this)
+        val cursor = db!!.retrieveName()
+        if( cursor != null && cursor.moveToFirst() ){
+            val string = "Hello, " + cursor.getString(cursor.getColumnIndex("username")) + "!"
+            helloUser.text = string
+            cursor.close()
+        }
 
 //        val preferences = getSharedPreferences("database", Context.MODE_PRIVATE)
 //        val savedName = preferences.getString("savedTaskName", "no more tasks")
@@ -36,9 +47,9 @@ class MainActivity : AppCompatActivity() {
 
         //val alltasks = listOf()
 
-        val preferences = getSharedPreferences ("database", Context.MODE_PRIVATE)
-        val name = preferences.getString("username", "null")
-        helloUser?.text = "Hi, $name!"
+//        val preferences = getSharedPreferences ("Database", Context.MODE_PRIVATE)
+//        val name = preferences.getString("username", "null")
+//        helloUser?.text = "Hi, $name!"
 
         calendar.setOnClickListener {
             startActivity(Intent(this, Calendar2::class.java))

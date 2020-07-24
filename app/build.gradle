@@ -44,5 +44,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
-    implementation 'com.pavelsikun:material-seekbar-preference:2.3.0'
+    implementation "androidx.preference:preference:1.1.1"
+    implementation 'com.pavelsikun:material-seekbar-preference:2.3.0+'
 }

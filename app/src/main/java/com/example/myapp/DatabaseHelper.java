@@ -61,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return false;
     }
 
-    public boolean insertDate(String date){
+    public Boolean insertDate(String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("date", date);
@@ -70,6 +70,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return true;
     }
 
-
+    public Cursor retrieveName(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from user", null);
+        return cursor;
+    }
 
 }

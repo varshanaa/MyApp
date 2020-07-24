@@ -9,6 +9,6 @@
         android:orderInCategory="100"
         android:title="@string/settingsmenu"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_settings"/>
+        android:icon="@mipmap/ic_settings2"/>
 
 </menu>

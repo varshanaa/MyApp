@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.util;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapp.CustomAdaptor;
+import com.example.myapp.DatabaseHelper;
 import com.example.myapp.LibraryAddActivity;
 import com.example.myapp.LibraryDatabaseHelper;
 import com.example.myapp.R;
@@ -29,10 +29,9 @@ public class TaskLibraryActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton addButton;
-    Button nextButton;
     ImageView empty_imageview;
-    TextView no_data;
-    private TextView textViewT;
+    TextView no_data, textViewT;
+    DatabaseHelper db;
 
     LibraryDatabaseHelper myDB;
     ArrayList<String> task_id, task_name, task_duration;
@@ -43,7 +42,8 @@ public class TaskLibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_library);
 
-        textViewT = findViewById(R.id.textView2);
+        textViewT = findViewById(R.id.textView);
+        db = new DatabaseHelper(this);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -61,15 +61,6 @@ public class TaskLibraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TaskLibraryActivity.this, LibraryAddActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        nextButton = findViewById(R.id.nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TaskLibraryActivity.this, TimeslotActivity.class);
                 startActivity(intent);
             }
         });
@@ -147,6 +138,5 @@ public class TaskLibraryActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
-
 
 }
