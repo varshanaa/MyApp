@@ -24,13 +24,13 @@ public class TimeslotActivity extends AppCompatActivity {
         tsButton6.findViewById(R.id.tsButton6);
         tsButton7.findViewById(R.id.tsButton7);
 
-        tsButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TimeslotActivity.this, LibraryAddActivity.class);
-                startActivity(intent);
-            }
-        });
+//        tsButton1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TimeslotActivity.this, LibraryAddActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 }
