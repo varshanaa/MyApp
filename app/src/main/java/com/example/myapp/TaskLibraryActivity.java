@@ -1,4 +1,4 @@
-package com.example.myapp.util;
+package com.example.myapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,8 +29,10 @@ public class TaskLibraryActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton addButton;
+    Button nextButton;
     ImageView empty_imageview;
     TextView no_data;
+    private TextView textViewT;
 
     LibraryDatabaseHelper myDB;
     ArrayList<String> task_id, task_name, task_duration;
@@ -40,6 +43,16 @@ public class TaskLibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_library);
 
+        textViewT = findViewById(R.id.textView2);
+
+        Bundle bundle = getIntent().getExtras();
+
+        //Extract the data…
+        String getDate = bundle.getString("DATE");
+
+        //Create the text view
+        textViewT.setText(getDate);
+
         recyclerView = findViewById(R.id.recyclerView);
         addButton = findViewById(R.id.addButton);
         empty_imageview = findViewById(R.id.empty_imageview);
@@ -48,6 +61,15 @@ public class TaskLibraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TaskLibraryActivity.this, LibraryAddActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        nextButton = findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TaskLibraryActivity.this, TimeslotActivity.class);
                 startActivity(intent);
             }
         });
@@ -125,5 +147,6 @@ public class TaskLibraryActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
+
 
 }

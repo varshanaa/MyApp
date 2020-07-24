@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListView2"></activity>
+        <activity android:name=".TimeslotActivity" />
+        <activity android:name=".ListView2" />
         <activity android:name=".Calendar2" />
         <activity android:name=".UpdateActivity" />
         <activity
@@ -44,7 +45,7 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".util.TaskLibraryActivity" />
+        <activity android:name=".TaskLibraryActivity" />
         <activity android:name=".LibraryAddActivity" />
         <activity
             android:name=".Timer"

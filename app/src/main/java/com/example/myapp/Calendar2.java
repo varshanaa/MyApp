@@ -28,9 +28,9 @@ public class Calendar2 extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
 
-                dateSelected = Integer.toString(year) + Integer.toString(month) + Integer.toString(dayOfMonth);
+                dateSelected = "My Tasks for " + Integer.toString(dayOfMonth) + "/" + Integer.toString(month) + "/" + Integer.toString(year)  ;
 
-                Intent i = new Intent(getApplicationContext(), CustomAdaptor.class);
+                Intent i = new Intent(getApplicationContext(), TaskLibraryActivity.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("DATE", dateSelected);
