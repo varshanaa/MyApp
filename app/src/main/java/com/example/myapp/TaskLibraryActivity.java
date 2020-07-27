@@ -1,4 +1,4 @@
-package com.example.myapp.util;
+package com.example.myapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,11 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapp.CustomAdaptor;
-import com.example.myapp.DatabaseHelper;
-import com.example.myapp.LibraryAddActivity;
-import com.example.myapp.LibraryDatabaseHelper;
-import com.example.myapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -32,6 +28,7 @@ public class TaskLibraryActivity extends AppCompatActivity {
     ImageView empty_imageview;
     TextView no_data, textViewT;
     DatabaseHelper db;
+    Button nxtButton;
 
     LibraryDatabaseHelper myDB;
     ArrayList<String> task_id, task_name, task_duration;
@@ -49,14 +46,22 @@ public class TaskLibraryActivity extends AppCompatActivity {
 
         //Extract the data…
         String getDate = bundle.getString("DATE");
-
-        //Create the text view
-        textViewT.setText(getDate);
+         textViewT.setText(getDate);
 
         recyclerView = findViewById(R.id.recyclerView);
         addButton = findViewById(R.id.addButton);
         empty_imageview = findViewById(R.id.empty_imageview);
         no_data = findViewById(R.id.no_data);
+        nxtButton = findViewById(R.id.nextButton);
+
+        nxtButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TaskLibraryActivity.this, TimeslotActivity.class);
+                startActivity(intent);
+            }
+        });
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,8 +8,6 @@ import android.widget.CalendarView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapp.util.TaskLibraryActivity;
-
 public class Calendar2 extends AppCompatActivity {
 
     private CalendarView calendarView2;
@@ -30,7 +28,8 @@ public class Calendar2 extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
 
-                dateSelected = Integer.toString(dayOfMonth) + "/" + Integer.toString(month) + "/" + Integer.toString(year);
+                dateSelected = dayOfMonth + "/" + month + "/" + year;
+
 
                 Intent i = new Intent(getApplicationContext(), TaskLibraryActivity.class);
 

@@ -59,10 +59,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, Timer::class.java))
         }
 
-        libraryButton.setOnClickListener {
-            startActivity(Intent(this, TaskLibraryActivity::class.java))
-        }
-
     }
 
     fun logout(view: View) {

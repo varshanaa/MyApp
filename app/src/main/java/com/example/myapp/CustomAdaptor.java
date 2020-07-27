@@ -42,9 +42,11 @@ public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
+        String string_duration = String.valueOf(task_duration.get(position)) + " hours";
+
         holder.task_id_text.setText(String.valueOf(task_id.get(position)));
         holder.task_title_text.setText(String.valueOf(task_title.get(position)));
-        holder.task_duration_text.setText(String.valueOf(task_duration.get(position)));
+        holder.task_duration_text.setText(string_duration);
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

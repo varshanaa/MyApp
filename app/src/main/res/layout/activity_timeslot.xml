@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7E4F3">
+    android:background="#C7E4F3"
+    tools:context=".TimeslotActivity">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -25,49 +26,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:background="#F39DBA"
-                android:text="0000 - 0600 hrs" />
+                android:text="0700 - 1300 hrs" />
 
             <Button
                 android:id="@+id/tsButton2"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:background="#FAAEA9"
-                android:text="0300 - 0900 hrs" />
+                android:text="0900 - 1500 hrs" />
 
             <Button
                 android:id="@+id/tsButton3"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:background="#F6EEA2"
-                android:text="0600 - 1200 hrs" />
+                android:text="1300 - 1900 hrs" />
 
             <Button
                 android:id="@+id/tsButton4"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:background="#C9D361"
-                android:text="0900 - 1500 hrs" />
+                android:text="1500 - 2100 hrs" />
 
             <Button
                 android:id="@+id/tsButton5"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:background="#8ACFC9"
-                android:text="1200 - 1800 hrs" />
+                android:text="1900 - 0100 hrs" />
 
             <Button
                 android:id="@+id/tsButton6"
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:background="#8596F1"
-                android:text="1500 - 2100 hrs" />
+                android:text="2100 - 0300 hrs" />
 
-            <Button
-                android:id="@+id/tsButton7"
-                android:layout_width="match_parent"
-                android:layout_height="125dp"
-                android:background="#BEA2F1"
-                android:text="1800 - 0000 hrs" />
 
         </LinearLayout>
     </ScrollView>
@@ -76,13 +71,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-black"
         android:text="Select Free Timeslot"
         android:textColor="#472626"
-        android:textSize="30sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

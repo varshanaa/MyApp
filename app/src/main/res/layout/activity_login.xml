@@ -17,10 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/sign_in"
-        android:textColor="#ED6090"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
         tools:text="SIGN IN" />
 
@@ -33,7 +33,7 @@
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/prompt_email"
 
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
@@ -52,7 +52,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/prompt_password"
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif-smallcaps"
 
         android:gravity="center"
         android:hint="@string/prompt_password"
@@ -70,9 +70,9 @@
         android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:background="#D8D4D4"
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="@string/login"
         android:textSize="18sp" />
@@ -82,9 +82,9 @@
         android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:background="#d8d4d4"
-        android:fontFamily="@font/advent_pro_semibold"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="@string/create_account"
         android:textSize="18sp" />

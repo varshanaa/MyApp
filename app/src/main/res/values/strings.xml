@@ -23,4 +23,7 @@
     <string name="logout">Logout</string>
     <string name="settingsmenu">Settings</string>
     <string name="textview" />
+    <string name="next">next</string>
+    <string name="hello_first_fragment">" "</string>
+    <string name="previous">previous</string>
 </resources>

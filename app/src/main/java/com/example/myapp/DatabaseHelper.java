@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Database.db";
+    private Context context;
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -20,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user (email text primary key, password text, username text)");
+        db.execSQL("Create table user (email text primary key, password text, username text, date text, tasks text, duration text)");
     }
 
     @Override
@@ -36,38 +37,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("password", password);
         contentValues.put("username", username);
         long ins = db.insert("user", null, contentValues);
-        if (ins==-1) return false;
-        else return true;
+        return ins != -1;
     }
 
     public Boolean chkemail(String email){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where email=?", new String[]{email});
-        if (cursor.getCount()>0) return false;
-        else return true;
+        return cursor.getCount() <= 0;
     }
 
     public Boolean chkloginemail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where email=?", new String[]{email});
-        if (cursor.getCount() == 0) return true;
-        else return false;
+        return cursor.getCount() == 0;
     }
 
     public Boolean chkpassword(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where email=? and password=?", new String[]{email, password});
-        if (cursor.getCount() > 0) return true;
-        else return false;
+        return cursor.getCount() > 0;
     }
 
-    public Boolean insertDate(String date){
+    public boolean insertDate(String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("date", date);
         long ins = db.insert("user", null, contentValues);
-        if (ins==-1) return false;
-        else return true;
+        return ins != -1;
     }
 
     public Cursor retrieveName(){
