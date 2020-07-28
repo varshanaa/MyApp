@@ -81,7 +81,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time1"
                             android:textSize="12sp"
-                            android:text="1300 - 1350"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                             android:layout_marginTop="5dp"
                             android:id="@+id/text_timeline_task1"
                             android:textColor="@android:color/black"
-                            android:text="Math Tutorial Part 1"/>
+                            android:text=""/>
 
                     </LinearLayout>
 
@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time2"
                             android:textSize="12sp"
-                            android:text="1350 - 1410"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -215,7 +215,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time3"
                             android:textSize="12sp"
-                            android:text="1410 - 1500"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -223,7 +223,7 @@
                             android:layout_marginTop="5dp"
                             android:id="@+id/text_timeline_task2"
                             android:textColor="@android:color/black"
-                            android:text="Math Tutorial Part 2"/>
+                            android:text=""/>
 
                     </LinearLayout>
 
@@ -282,7 +282,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time4"
                             android:textSize="12sp"
-                            android:text="1500 - 1520"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -349,7 +349,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time5"
                             android:textSize="12sp"
-                            android:text="1520 - 1610"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -357,7 +357,7 @@
                             android:layout_marginTop="5dp"
                             android:id="@+id/text_timeline_task3"
                             android:textColor="@android:color/black"
-                            android:text="Math Tutorial Part 3, Econs Tutorial Part 1"/>
+                            android:text=""/>
 
                     </LinearLayout>
 
@@ -416,7 +416,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time6"
                             android:textSize="12sp"
-                            android:text="1610 - 1630"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -483,7 +483,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time7"
                             android:textSize="12sp"
-                            android:text="1630 - 1720"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -491,7 +491,7 @@
                             android:layout_marginTop="5dp"
                             android:id="@+id/text_timeline_task4"
                             android:textColor="@android:color/black"
-                            android:text="Econs Tutorial Part 2"/>
+                            android:text=""/>
 
                     </LinearLayout>
 
@@ -550,7 +550,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time8"
                             android:textSize="12sp"
-                            android:text="1720 - 1740"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -617,7 +617,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time9"
                             android:textSize="12sp"
-                            android:text="1740 - 1830"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -625,7 +625,7 @@
                             android:layout_marginTop="5dp"
                             android:id="@+id/text_timeline_task5"
                             android:textColor="@android:color/black"
-                            android:text="Econs Tutorial Part 3"/>
+                            android:text=""/>
 
                     </LinearLayout>
 
@@ -684,7 +684,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/text_timeline_time10"
                             android:textSize="12sp"
-                            android:text="1830 - 1900"/>
+                            android:text=" "/>
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"

@@ -50,6 +50,7 @@ public class LibraryDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TASK, task);
         cv.put(COLUMN_DURATION, duration);
         long result = db.insert(TABLE_NAME, null, cv);
+
         if (result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         } else {
@@ -98,4 +99,16 @@ public class LibraryDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_NAME);
     }
 
+    public Cursor retrieveTask(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from my_library", null);
+        return cursor;
+    }
+
+    public Cursor retrieveTask2(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from my_library", null);
+        cursor.moveToPosition(1);
+        return cursor;
+    }
 }
